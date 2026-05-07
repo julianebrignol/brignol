@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>brignol — serviços e planos personalizados.</title>
+  <meta name="description"
+    content="Os planos brignol — kit base, sérum exclusivo, consulta personalizada, refill mensal e atendimento VIP. Escolhe o ritual que melhor se adapta à tua rotina." />
+  <meta name="keywords" content="brignol, serviços, planos, beleza, skincare, consulta, refill" />
+  <meta name="author" content="Juliane Brignol" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/servicos.css" />
+</head>
+
+<body>
+
+  <div class="announcement" role="region" aria-label="Avisos da loja">
+    novidades · envio grátis em compras acima de 50€
+  </div>
+
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menu" />
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <label for="nav-toggle" class="nav-burger" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="nav nav--left" aria-label="Navegação principal">
+        <a href="../index.html#produtos">Produtos</a>
+        <a href="sobre-nos.html">Sobre nós</a>
+      </nav>
+
+      <a href="../index.html" class="brand" aria-label="Brignol — voltar à página inicial">brignol</a>
+
+      <nav class="nav nav--right" aria-label="Navegação secundária">
+        <a href="servicos.html" aria-current="page">Serviços</a>
+        <a href="contactos.html">Contactos</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="nav-mobile" aria-label="Navegação mobile">
+    <span class="nav-mobile__brand">brignol</span>
+    <label for="nav-toggle" class="nav-mobile__close" aria-label="Fechar menu">×</label>
+    <a href="../index.html">Início</a>
+    <a href="../index.html#produtos">Produtos</a>
+    <a href="sobre-nos.html">Sobre nós</a>
+    <a href="servicos.html" aria-current="page">Serviços</a>
+    <a href="contactos.html">Contactos</a>
+  </nav>
+
+  <main>
+
+    <section class="services-hero" aria-labelledby="services-title">
+      <p class="services-hero__eyebrow">— serviços</p>
+      <h1 class="services-hero__title" id="services-title">três planos.<br /><em>um ritual seu.</em></h1>
+      <p class="services-hero__intro">Para além dos produtos, oferecemos planos personalizados que combinam consulta,
+        fórmulas exclusivas e acompanhamento. Escolhe o que faz mais sentido para a tua rotina — podes mudar quando
+        quiseres.</p>
+      <hr />
+    </section>
+
+    <section class="plans" aria-label="Comparação de planos">
+      <table class="plans__table">
+
+        <thead>
+          <tr>
+            <th scope="col">
+              <span class="sr-only">Funcionalidade</span>
+            </th>
+            <th scope="col" class="plan">
+              <span class="plans__plan-name">essencial</span>
+              <span class="plans__plan-price">desde €38 / mês</span>
+            </th>
+            <th scope="col" class="plan">
+              <span class="plans__plan-name">premium</span>
+              <span class="plans__plan-price">desde €72 / mês</span>
+            </th>
+            <th scope="col" class="plan">
+              <span class="plans__plan-name">luxo</span>
+              <span class="plans__plan-price">desde €145 / mês</span>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <th scope="row" class="plans__feature">
+              Kit base
+              <em>4 produtos essenciais para a tua rotina.</em>
+            </th>
+            <td class="plans__cell"><span class="plans__check" aria-label="Incluído">✓</span></td>
+            <td class="plans__cell"><span class="plans__check" aria-label="Incluído">✓</span></td>
+            <td class="plans__cell"><span class="plans__check" aria-label="Incluído">✓</span></td>
+          </tr>
+
+          <tr>
+            <th scope="row" class="plans__feature">
+              Sérum exclusivo
+              <em>Fórmula desenhada para o teu tipo de pele.</em>
+            </th>
+            <td class="plans__cell"><span class="plans__dash" aria-label="Não incluído"></span></td>
+            <td class="plans__cell"><span class="plans__check" aria-label="Incluído">✓</span></td>
+            <td class="plans__cell"><span class="plans__check" aria-label="Incluído">✓</span></td>
+          </tr>
+
+          <tr>
+            <th scope="row" class="plans__feature">
+              Consulta personalizada
+              <em>30 minutos com a nossa equipa, online ou no atelier.</em>
+            </th>
+            <td class="plans__cell"><span class="plans__dash" aria-label="Não incluído"></span></td>
+            <td class="plans__cell"><span class="plans__check" aria-label="Incluído">✓</span></td>
+            <td class="plans__cell"><span class="plans__check" aria-label="Incluído">✓</span></td>
+          </tr>
+
+          <tr>
+            <th scope="row" class="plans__feature">
+              Refill mensal
+              <em>Reposições automáticas, sem teres de pensar nisso.</em>
+            </th>
+            <td class="plans__cell"><span class="plans__dash" aria-label="Não incluído"></span></td>
+            <td class="plans__cell"><span class="plans__dash" aria-label="Não incluído"></span></td>
+            <td class="plans__cell"><span class="plans__check" aria-label="Incluído">✓</span></td>
+          </tr>
+
+          <tr>
+            <th scope="row" class="plans__feature">
+              Atendimento VIP
+              <em>Linha direta com a fundadora e acesso a edições limitadas.</em>
+            </th>
+            <td class="plans__cell"><span class="plans__dash" aria-label="Não incluído"></span></td>
+            <td class="plans__cell"><span class="plans__dash" aria-label="Não incluído"></span></td>
+            <td class="plans__cell"><span class="plans__check" aria-label="Incluído">✓</span></td>
+          </tr>
+
+          <tr class="plans__cta-row">
+            <td></td>
+            <td><a href="contactos.html" class="btn">Escolher</a></td>
+            <td><a href="contactos.html" class="btn">Escolher</a></td>
+            <td><a href="contactos.html" class="btn">Escolher</a></td>
+          </tr>
+
+        </tbody>
+
+      </table>
+    </section>
+
+    <section class="services-cta" aria-labelledby="cta-title">
+      <div class="services-cta__inner">
+        <p class="eyebrow">— próximos passos</p>
+        <h2 class="services-cta__title" id="cta-title">queres saber mais?</h2>
+        <p>Descarrega o catálogo completo com todos os produtos, ingredientes e detalhes de cada plano — ou fala
+          connosco diretamente.</p>
+        <div class="services-cta__buttons">
+          <a href="../download/catalogo-brignol.pdf" class="btn" download>↓ Descarregar catálogo PDF</a>
+          <a href="contactos.html" class="btn">Fala connosco</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+
+    <div class="site-footer__wordmark" aria-hidden="true">brignol</div>
+
+    <div class="site-footer__inner">
+
+      <div class="footer-col">
+        <h3 class="footer-col__title">A marca</h3>
+        <p>A beleza que respeita a tua pele.</p>
+        <p>Produtos pensados para durar — não para serem repostos todos os meses.</p>
+        <p>Criados com cuidado em Portugal, num atelier no Porto.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-col__title">Contactos</h3>
+        <p>Rua das Flores, 142<br />4050-263 Porto, Portugal</p>
+        <p><a href="tel:+351220000000">+351 220 000 000</a></p>
+        <p><a href="mailto:hello@brignol.pt">hello@brignol.pt</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-col__title">Informação legal</h3>
+        <ul>
+          <li><a href="#">Livro de Reclamações</a></li>
+          <li><a href="#">Termos e Condições</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="site-footer__credits">
+      Webdesign: Juliane Brignol <span class="sep">·</span> © 2026 Todos os direitos reservados.
+    </div>
+
+  </footer>
+
+</body>
+
+</html>

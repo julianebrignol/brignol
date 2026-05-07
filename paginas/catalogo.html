@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>brignol — catálogo 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* --- Tokens ----------------------------------------------------------- */
+    :root {
+      --cream:        #F1F0ED;
+      --white:        #FFFFFF;
+      --text:         rgb(103, 100, 94);
+      --text-strong:  rgb(72, 70, 66);
+      --accent:       oklch(0.84 0.04 20);
+      --accent-mid:   oklch(0.78 0.06 20);
+      --separator:    rgb(196, 196, 196);
+      --font:         'DM Sans', system-ui, sans-serif;
+    }
+
+    /* --- Reset ------------------------------------------------------------ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background: #E8E6E2;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* --- Download button (screen only) ------------------------------------ */
+    .download-btn {
+      position: fixed;
+      bottom: 36px;
+      right: 36px;
+      z-index: 999;
+      background: var(--text-strong);
+      color: #fff;
+      font-family: var(--font);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+      transition: background 0.2s;
+    }
+    .download-btn:hover { background: var(--accent-mid); }
+    .download-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* --- Page base -------------------------------------------------------- */
+    .catalog { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 40px 0 80px; }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      background: var(--cream);
+      overflow: hidden;
+      position: relative;
+      page-break-after: always;
+      break-after: page;
+      flex-shrink: 0;
+    }
+
+    /* --- Cover ------------------------------------------------------------ */
+    .cover {
+      background: var(--text-strong);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cover__top {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 48px;
+      gap: 0;
+    }
+
+    .cover__eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 28px;
+    }
+
+    .cover__brand {
+      font-size: 72px;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 32px;
+    }
+
+    .cover__line {
+      width: 48px;
+      height: 1px;
+      background: var(--accent);
+      margin-bottom: 32px;
+    }
+
+    .cover__tagline {
+      font-size: 18px;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.01em;
+      text-align: center;
+    }
+
+    .cover__bottom {
+      padding: 32px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .cover__meta {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .cover__year {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* --- Intro page ------------------------------------------------------- */
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .intro__left {
+      background: var(--accent);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 52px 44px;
+    }
+
+    .intro__left-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(72,70,66,0.6);
+      margin-bottom: 20px;
+    }
+
+    .intro__left-title {
+      font-size: 38px;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--text-strong);
+    }
+
+    .intro__left-title em {
+      font-style: italic;
+    }
+
+    .intro__right {
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 52px 44px;
+      gap: 28px;
+    }
+
+    .intro__right-brand {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .intro__right-body {
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--text);
+      max-width: 32ch;
+    }
+
+    .intro__right-body + .intro__right-body {
+      padding-top: 0;
+    }
+
+    .intro__right-sep {
+      width: 32px;
+      height: 1px;
+      background: var(--separator);
+    }
+
+    .intro__right-detail {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.6;
+    }
+
+    /* --- Product page ----------------------------------------------------- */
+    .product-page {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+    }
+
+    .product-page--reverse {
+      grid-template-columns: 0.95fr 1.05fr;
+    }
+    .product-page--reverse .product__image { order: 2; }
+    .product-page--reverse .product__info  { order: 1; }
+
+    .product__image {
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .product__tag {
+      position: absolute;
+      top: 28px;
+      left: 28px;
+      background: var(--text-strong);
+      color: #fff;
+      font-size: 8px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 50px;
+    }
+
+    .product__tag--accent {
+      background: var(--accent-mid);
+      color: #fff;
+    }
+
+    .product__info {
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 52px 44px;
+      gap: 0;
+    }
+
+    .product__category {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-mid);
+      margin-bottom: 16px;
+    }
+
+    .product__name {
+      font-size: 48px;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--text-strong);
+      margin-bottom: 24px;
+    }
+
+    .product__sep {
+      width: 32px;
+      height: 1.5px;
+      background: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    .product__desc {
+      font-size: 12.5px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--text);
+      max-width: 30ch;
+      margin-bottom: 28px;
+    }
+
+    .product__ingredients-label {
+      font-size: 8.5px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.55;
+      margin-bottom: 8px;
+    }
+
+    .product__ingredients {
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 36px;
+    }
+
+    .product__footer {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      border-top: 1px solid var(--separator);
+      padding-top: 20px;
+    }
+
+    .product__volume {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.6;
+    }
+
+    .product__price {
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      color: var(--text-strong);
+    }
+
+    /* --- Back cover ------------------------------------------------------- */
+    .back {
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      position: relative;
+    }
+
+    .back__inner {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .back__label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.5;
+    }
+
+    .back__brand {
+      font-size: 56px;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: var(--text-strong);
+      line-height: 1;
+    }
+
+    .back__line {
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .back__tagline {
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text);
+      letter-spacing: 0.01em;
+    }
+
+    .back__contact {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .back__contact-item {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--text);
+      opacity: 0.65;
+    }
+
+    .back__bottom {
+      position: absolute;
+      bottom: 32px;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .back__dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--separator);
+    }
+
+    .back__copyright {
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.4;
+    }
+
+    /* --- Print ------------------------------------------------------------ */
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+      body { background: none; }
+      .catalog { padding: 0; gap: 0; }
+      .download-btn { display: none; }
+      .page {
+        box-shadow: none;
+        width: 210mm;
+        height: 297mm;
+      }
+    }
+
+    /* --- Screen shadow ---------------------------------------------------- */
+    @media screen {
+      .page {
+        box-shadow: 0 4px 40px rgba(0,0,0,0.14);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <button class="download-btn" onclick="window.print()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+      <polyline points="7 10 12 15 17 10"/>
+      <line x1="12" y1="15" x2="12" y2="3"/>
+    </svg>
+    Baixar PDF
+  </button>
+
+  <div class="catalog">
+
+    <!-- Capa ---------------------------------------------------------------- -->
+    <div class="page cover">
+      <div class="cover__top">
+        <p class="cover__eyebrow">— a primeira coleção</p>
+        <h1 class="cover__brand">brignol</h1>
+        <div class="cover__line"></div>
+        <p class="cover__tagline">a beleza que dura.</p>
+      </div>
+      <div class="cover__bottom">
+        <span class="cover__meta">catálogo de produtos</span>
+        <span class="cover__year">2026</span>
+      </div>
+    </div>
+
+    <!-- Intro --------------------------------------------------------------- -->
+    <div class="page intro">
+      <div class="intro__left">
+        <p class="intro__left-label">— a nossa filosofia</p>
+        <h2 class="intro__left-title">menos produtos.<br /><em>mais ritual.</em></h2>
+      </div>
+      <div class="intro__right">
+        <p class="intro__right-brand">brignol · porto, portugal</p>
+        <div class="intro__right-sep"></div>
+        <p class="intro__right-body">Acreditamos que a pele é melhor cuidada com poucos gestos, repetidos com intenção. Cada fórmula nasce de meses de estudo — e do desejo de simplificar a rotina sem comprometer o que importa.</p>
+        <p class="intro__right-body">Trabalhamos com ingredientes simples, embalagens que duram e texturas que respeitam a pele. Sem ruído. Sem promessas que não cumprimos.</p>
+        <div class="intro__right-sep"></div>
+        <p class="intro__right-detail">4 produtos · coleção 2026</p>
+      </div>
+    </div>
+
+    <!-- Sérum --------------------------------------------------------------- -->
+    <div class="page product-page">
+      <div class="product__image">
+        <img src="../imagens/serum.png" alt="Sérum Renovador Brignol" />
+        <span class="product__tag">novo</span>
+      </div>
+      <div class="product__info">
+        <p class="product__category">— cuidado da pele</p>
+        <h2 class="product__name">sérum</h2>
+        <div class="product__sep"></div>
+        <p class="product__desc">Uma fórmula concentrada que trabalha enquanto dormes. Activa a renovação celular e devolve luminosidade à pele ao longo da noite.</p>
+        <p class="product__ingredients-label">Ingredientes principais</p>
+        <p class="product__ingredients">Retinol · Niacinamide<br />Ácido Hialurónico</p>
+        <div class="product__footer">
+          <span class="product__volume">renovador noturno · 30ml</span>
+          <span class="product__price">€48,00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Base ---------------------------------------------------------------- -->
+    <div class="page product-page product-page--reverse">
+      <div class="product__image">
+        <img src="../imagens/base.png" alt="Base Facial Brignol" />
+      </div>
+      <div class="product__info">
+        <p class="product__category">— maquilhagem</p>
+        <h2 class="product__name">base</h2>
+        <div class="product__sep"></div>
+        <p class="product__desc">Cobertura média a alta com acabamento luminoso e natural. Adapta-se a todos os tons de pele para um resultado que dura o dia inteiro.</p>
+        <p class="product__ingredients-label">Ingredientes principais</p>
+        <p class="product__ingredients">SPF 15 · Vitamina E<br />Extracto de Aloe Vera</p>
+        <div class="product__footer">
+          <span class="product__volume">acabamento luminoso · 30ml</span>
+          <span class="product__price">€36,00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bálsamo ------------------------------------------------------------- -->
+    <div class="page product-page">
+      <div class="product__image">
+        <img src="../imagens/balsamo.png" alt="Bálsamo Labial Brignol" />
+        <span class="product__tag product__tag--accent">edição limitada</span>
+      </div>
+      <div class="product__info">
+        <p class="product__category">— cuidado labial</p>
+        <h2 class="product__name">bálsamo</h2>
+        <div class="product__sep"></div>
+        <p class="product__desc">Textura suave que hidrata, repara e protege os lábios. Fórmula nutritiva de longa duração com sabor subtil a leite condensado.</p>
+        <p class="product__ingredients-label">Ingredientes principais</p>
+        <p class="product__ingredients">Manteiga de Karité · Vitamina C<br />Cera de Abelha Natural</p>
+        <div class="product__footer">
+          <span class="product__volume">lábios reparadores · 15ml</span>
+          <span class="product__price">€18,00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Máscara ------------------------------------------------------------- -->
+    <div class="page product-page product-page--reverse">
+      <div class="product__image">
+        <img src="../imagens/mascara.png" alt="Máscara Facial Brignol" />
+      </div>
+      <div class="product__info">
+        <p class="product__category">— cuidado da pele</p>
+        <h2 class="product__name">máscara</h2>
+        <div class="product__sep"></div>
+        <p class="product__desc">Máscara facial de uso semanal que restaura os níveis de hidratação da pele. Textura cremosa que absorve rapidamente sem deixar resíduo.</p>
+        <p class="product__ingredients-label">Ingredientes principais</p>
+        <p class="product__ingredients">Ácido Hialurónico · Ceramidas<br />Extracto de Pepino</p>
+        <div class="product__footer">
+          <span class="product__volume">hidratação profunda · 50ml</span>
+          <span class="product__price">€28,00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contracapa ---------------------------------------------------------- -->
+    <div class="page back">
+      <div class="back__inner">
+        <p class="back__label">— beleza que dura, criada com cuidado</p>
+        <h2 class="back__brand">brignol</h2>
+        <div class="back__line"></div>
+        <p class="back__tagline">feito em Portugal, pensado para a tua pele.</p>
+        <div class="back__contact">
+          <span class="back__contact-item">hello@brignol.pt</span>
+          <span class="back__contact-item">Rua das Flores, 142 · 4050-263 Porto</span>
+          <span class="back__contact-item">brignol.pt</span>
+        </div>
+      </div>
+      <div class="back__bottom">
+        <span class="back__copyright">© 2026 brignol</span>
+        <div class="back__dot"></div>
+        <span class="back__copyright">todos os direitos reservados</span>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

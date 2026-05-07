@@ -1,0 +1,209 @@
+.services-hero {
+  padding: 80px var(--section-padding-x) 0;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.services-hero__eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+  margin-bottom: 20px;
+}
+
+.services-hero__title {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-light);
+  font-size: clamp(40px, 6vw, 72px);
+  letter-spacing: var(--ls-tight);
+  line-height: 1.05;
+  color: var(--color-text-strong);
+  max-width: 16ch;
+}
+
+.services-hero__title em {
+  font-style: italic;
+  font-weight: var(--fw-light);
+}
+
+.services-hero__intro {
+  margin-top: 28px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-text);
+  max-width: 56ch;
+}
+
+.services-hero hr {
+  margin-top: 56px;
+  border: 0;
+  height: 1px;
+  background: var(--color-separator);
+}
+
+/* --- Tabela de planos --------------------------------------------------- */
+.plans {
+  padding: 64px var(--section-padding-x) 80px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.plans__table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.plans__table thead th {
+  padding: 24px 20px;
+  font-size: 11px;
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text);
+  text-align: left;
+  vertical-align: bottom;
+}
+
+.plans__table thead th.plan {
+  color: var(--color-text-strong);
+}
+
+.plans__plan-name {
+  display: block;
+  font-family: var(--font-primary);
+  font-weight: var(--fw-bold);
+  font-size: 22px;
+  text-transform: lowercase;
+  letter-spacing: -0.02em;
+  color: var(--color-text-strong);
+  margin-bottom: 6px;
+}
+
+.plans__plan-price {
+  display: block;
+  font-size: 12px;
+  font-weight: var(--fw-regular);
+  letter-spacing: var(--ls-normal);
+  text-transform: none;
+  color: var(--color-text);
+}
+
+.plans__table tbody tr {
+  border-top: 1px solid var(--color-separator);
+}
+
+.plans__table tbody tr:last-child {
+  border-bottom: 1px solid var(--color-separator);
+}
+
+.plans__table tbody td,
+.plans__table tbody th {
+  padding: 22px 20px;
+  vertical-align: middle;
+}
+
+.plans__feature {
+  font-weight: var(--fw-regular);
+  color: var(--color-text-strong);
+  font-size: 14px;
+  text-align: left;
+}
+
+.plans__feature em {
+  display: block;
+  font-style: normal;
+  font-size: 12px;
+  color: var(--color-text);
+  margin-top: 4px;
+  font-weight: var(--fw-regular);
+}
+
+.plans__cell {
+  text-align: center;
+  color: var(--color-text);
+  font-size: 16px;
+}
+
+.plans__check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-text-strong);
+  color: #FFFFFF;
+  font-size: 11px;
+}
+
+.plans__dash {
+  display: inline-block;
+  width: 14px;
+  height: 1px;
+  background: var(--color-separator);
+  vertical-align: middle;
+}
+
+.plans__cta-row td {
+  padding-top: 32px;
+  text-align: center;
+}
+
+.plans__cta-row .btn {
+  width: 100%;
+  max-width: 220px;
+}
+
+/* --- CTA bar ------------------------------------------------------------ */
+.services-cta {
+  background: var(--color-card);
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.services-cta__inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.services-cta__title {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-light);
+  font-size: clamp(28px, 3.4vw, 42px);
+  letter-spacing: var(--ls-tight);
+  line-height: 1.15;
+  color: var(--color-text-strong);
+  font-style: italic;
+}
+
+.services-cta__buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* --- Responsive --------------------------------------------------------- */
+@media (max-width: 760px) {
+  .plans {
+    padding: 32px 0 48px;
+    overflow-x: auto;
+  }
+
+  .plans__table {
+    min-width: 640px;
+    margin: 0 var(--section-padding-x);
+  }
+
+  .plans__cta-row .btn {
+    max-width: 160px;
+  }
+}

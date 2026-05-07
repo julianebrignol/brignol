@@ -1,0 +1,223 @@
+.contact-hero {
+  padding: 80px var(--section-padding-x) 0;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.contact-hero__eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+  margin-bottom: 20px;
+}
+
+.contact-hero__title {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-light);
+  font-size: clamp(40px, 6vw, 72px);
+  letter-spacing: var(--ls-tight);
+  line-height: 1.05;
+  color: var(--color-text-strong);
+  max-width: 16ch;
+}
+
+.contact-hero__title em {
+  font-style: italic;
+  font-weight: var(--fw-light);
+}
+
+.contact-hero__intro {
+  margin-top: 28px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-text);
+  max-width: 52ch;
+}
+
+.contact-hero hr {
+  margin-top: 56px;
+  border: 0;
+  height: 1px;
+  background: var(--color-separator);
+}
+
+/* --- Layout 2 colunas --------------------------------------------------- */
+.contact-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 80px var(--section-padding-x) 100px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* --- Formulário --------------------------------------------------------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-size: 11px;
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text);
+}
+
+.field input,
+.field select,
+.field textarea {
+  background: var(--color-card);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  color: var(--color-text-strong);
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(103, 100, 94, 0.5);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--color-text);
+  background: #FFFFFF;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 160px;
+  line-height: 1.6;
+}
+
+.field--row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.contact-form__submit {
+  margin-top: 16px;
+  align-self: flex-start;
+  min-width: 220px;
+}
+
+.contact-form__legal {
+  font-size: 12px;
+  color: var(--color-text);
+  line-height: 1.6;
+  max-width: 48ch;
+}
+
+/* --- Coluna info -------------------------------------------------------- */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  background: var(--color-card);
+  border-radius: var(--radius-card);
+  padding: 40px 32px;
+}
+
+.contact-info__block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-info__label {
+  font-size: 11px;
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.contact-info__block p,
+.contact-info__block a {
+  font-size: 15px;
+  color: var(--color-text-strong);
+  line-height: 1.5;
+}
+
+.contact-info__block a {
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition);
+}
+
+.contact-info__block a:hover {
+  border-bottom-color: var(--color-text-strong);
+}
+
+.contact-info__hours {
+  font-size: 13px;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.contact-info hr {
+  border: 0;
+  height: 1px;
+  background: var(--color-footer-border);
+  opacity: 0.4;
+}
+
+/* --- Social ------------------------------------------------------------- */
+.social {
+  display: flex;
+  gap: 12px;
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-text);
+  color: var(--color-text);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.social a:hover {
+  background: var(--color-text);
+  color: #FFFFFF;
+}
+
+.social svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* --- Responsive --------------------------------------------------------- */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .field--row {
+    grid-template-columns: 1fr;
+  }
+}

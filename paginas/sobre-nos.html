@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>brignol — sobre nós, a nossa história e a nossa filosofia.</title>
+  <meta name="description"
+    content="A história da Brignol — uma marca de beleza criada em Portugal, com foco em fórmulas simples, ingredientes responsáveis e cuidado com a pele." />
+  <meta name="keywords" content="brignol, sobre nós, história, marca, beleza, Portugal, fundadora" />
+  <meta name="author" content="Juliane Brignol" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/sobre-nos.css" />
+</head>
+
+<body>
+
+  <div class="announcement" role="region" aria-label="Avisos da loja">
+    novidades · envio grátis em compras acima de 50€
+  </div>
+
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menu" />
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <label for="nav-toggle" class="nav-burger" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="nav nav--left" aria-label="Navegação principal">
+        <a href="../index.html#produtos">Produtos</a>
+        <a href="sobre-nos.html" aria-current="page">Sobre nós</a>
+      </nav>
+
+      <a href="../index.html" class="brand" aria-label="Brignol — voltar à página inicial">brignol</a>
+
+      <nav class="nav nav--right" aria-label="Navegação secundária">
+        <a href="servicos.html">Serviços</a>
+        <a href="contactos.html">Contactos</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="nav-mobile" aria-label="Navegação mobile">
+    <span class="nav-mobile__brand">brignol</span>
+    <label for="nav-toggle" class="nav-mobile__close" aria-label="Fechar menu">×</label>
+    <a href="../index.html">Início</a>
+    <a href="../index.html#produtos">Produtos</a>
+    <a href="sobre-nos.html" aria-current="page">Sobre nós</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="contactos.html">Contactos</a>
+  </nav>
+
+  <main>
+
+    <!-- =============================================================== -->
+    <!-- HERO TÍTULO                                                     -->
+    <!-- =============================================================== -->
+    <section class="about-hero" aria-labelledby="about-title">
+      <p class="about-hero__eyebrow">— sobre nós</p>
+      <h1 class="about-hero__title" id="about-title">a nossa<br /><em>história.</em></h1>
+      <hr />
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- SPLIT — TEXTO + IMAGEM                                          -->
+    <!-- =============================================================== -->
+    <section class="about-split" aria-labelledby="split-title">
+      <div class="about-split__grid">
+
+        <div class="about-split__text">
+          <h2 class="about-split__heading" id="split-title">não é sobre maquilhagem.<br /><em>é sobre como te
+              sentes.</em></h2>
+
+          <div class="about-split__body">
+            <p>A brignol nasceu de um cansaço — o de ver prateleiras cheias de produtos que prometiam tudo e cumpriam
+              pouco. Quisemos voltar ao essencial: poucas fórmulas, ingredientes simples e embalagens pensadas para
+              durar.</p>
+            <p>Trabalhamos com laboratórios em Portugal, num atelier no Porto onde cada lote é testado, ajustado e
+              aprovado por quem o desenhou. Tudo o que sai do nosso atelier passa pelas mãos de pessoas — não de
+              máquinas anónimas.</p>
+            <p>Acreditamos que a beleza não é uma corrida. É um cuidado que se constrói com tempo, e com produtos que
+              respeitam quem os usa.</p>
+          </div>
+
+          <ul class="values-list" role="list">
+            <li>
+              <span class="values-list__num">01</span>
+              <span class="values-list__label">Ingredientes naturais e rastreáveis<em>Cada fórmula é desenhada com o
+                  mínimo de componentes, sempre identificáveis.</em></span>
+            </li>
+            <li>
+              <span class="values-list__num">02</span>
+              <span class="values-list__label">Cruelty-free, sempre<em>Nunca testámos em animais — e não vamos começar
+                  agora.</em></span>
+            </li>
+            <li>
+              <span class="values-list__num">03</span>
+              <span class="values-list__label">Feito em Portugal<em>Produção local, em pequenas séries, no
+                  Porto.</em></span>
+            </li>
+          </ul>
+
+          <a href="contactos.html" class="btn about-split__cta">Fala connosco</a>
+        </div>
+
+        <div class="about-split__media">
+          <img src="../imagens/sobre.png" alt="Atelier Brignol — bancada de trabalho" />
+        </div>
+
+      </div>
+    </section>
+
+    <section class="founder" aria-labelledby="founder-title">
+      <div class="founder__inner">
+        <p class="eyebrow">— uma palavra da fundadora</p>
+        <p class="founder__quote" id="founder-title">"Comecei a brignol porque procurava uma beleza mais lenta. Uma que
+          coubesse na minha rotina sem a invadir."</p>
+        <p class="founder__attribution">Juliane Brignol · Fundadora</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+
+    <div class="site-footer__wordmark" aria-hidden="true">brignol</div>
+
+    <div class="site-footer__inner">
+
+      <div class="footer-col">
+        <h3 class="footer-col__title">A marca</h3>
+        <p>A beleza que respeita a tua pele.</p>
+        <p>Produtos pensados para durar — não para serem repostos todos os meses.</p>
+        <p>Criados com cuidado em Portugal, num atelier no Porto.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-col__title">Contactos</h3>
+        <p>Rua das Flores, 142<br />4050-263 Porto, Portugal</p>
+        <p><a href="tel:+351220000000">+351 220 000 000</a></p>
+        <p><a href="mailto:hello@brignol.pt">hello@brignol.pt</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-col__title">Informação legal</h3>
+        <ul>
+          <li><a href="#">Livro de Reclamações</a></li>
+          <li><a href="#">Termos e Condições</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="site-footer__credits">
+      Webdesign: Juliane Brignol <span class="sep">·</span> © 2026 Todos os direitos reservados.
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
