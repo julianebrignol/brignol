@@ -101,6 +101,10 @@
   margin-right: auto;
 }
 
+.bestsellers__head .eyebrow {
+  margin-bottom: 14px;
+}
+
 .bestsellers__title {
   font-family: var(--font-primary);
   font-weight: var(--fw-light);
