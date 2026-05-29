@@ -43,15 +43,103 @@
   background: var(--color-separator);
 }
 
-/* --- Layout 2 colunas --------------------------------------------------- */
+/* --- Secção obrigatória: 3 cards de contacto --------------------------- */
+.contact-cards {
+  padding: 80px var(--section-padding-x) 64px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+.contact-cards__header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.contact-cards__main-title {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-light);
+  font-size: clamp(28px, 3.5vw, 42px);
+  letter-spacing: var(--ls-tight);
+  line-height: 1.1;
+  color: var(--color-text-strong);
+  margin-bottom: 12px;
+}
+
+.contact-cards__subtitle {
+  font-size: 15px;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.contact-card {
+  padding-top: 32px;
+  border-top: 1.5px solid var(--color-separator);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}
+
+.contact-card__icon {
+  width: 44px;
+  height: 44px;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.contact-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-card__title {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-medium);
+  font-size: 18px;
+  color: var(--color-text-strong);
+  letter-spacing: var(--ls-tight);
+}
+
+.contact-card__text {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--color-text);
+  max-width: 42ch;
+}
+
+.contact-card__footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-card__btn {
+  align-self: flex-start;
+}
+
+.contact-card__link {
+  font-size: 13px;
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+  letter-spacing: var(--ls-normal);
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.contact-card__link:hover {
+  color: var(--color-text-strong);
+  border-bottom-color: var(--color-text-strong);
+}
+
+/* --- Formulário e info: layout via Bootstrap row/col ------------------- */
 .contact-grid {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 80px var(--section-padding-x) 100px;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 80px;
-  align-items: start;
+  padding: 0 var(--section-padding-x) 100px;
+  overflow-x: hidden;
 }
 
 /* --- Formulário --------------------------------------------------------- */
@@ -211,13 +299,16 @@
 }
 
 /* --- Responsive --------------------------------------------------------- */
-@media (max-width: 900px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
+@media (max-width: 767px) {
   .field--row {
     grid-template-columns: 1fr;
+  }
+
+  .contact-cards {
+    padding-bottom: 40px;
+  }
+
+  .contact-card__text {
+    max-width: none;
   }
 }
